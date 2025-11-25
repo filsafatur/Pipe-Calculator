@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Pipe Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Pipe Calculator</h1>
+       
+        
+        <!-- === INPUT SECTION === -->
+        <div class="input-section">
+            <h2>Input Data</h2>
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="pipe-size">Pipe Size (NPS)</label>
+                    <select id="pipe-size"></select>
+                </div>
+                <div class="input-group">
+                    <label for="schedule">Schedule</label>
+                    <select id="schedule"></select>
+                </div>
+                <div class="input-group">
+                    <label for="material">Material</label>
+                    <select id="material"></select>
+                </div>
+                <div class="input-group">
+                    <label for="content-density">Content Density (kg/m³)</label>
+                    <input type="number" id="content-density" value="1000"> <!-- Default to water -->
+                </div>
+                <div class="input-group">
+                    <label for="insulation-material">Insulation Material</label>
+                    <select id="insulation-material"></select>
+                </div>
+                 <div class="input-group">
+                    <label for="insulation-thickness">Insulation Thickness (mm)</label>
+                    <input type="number" id="insulation-thickness" value="0">
+                </div>
+            </div>
+        </div>
+        
+        <button id="calculate-btn">Calculate</button>
+        
+        <!-- === OUTPUT SECTION === -->
+        <div class="output-wrapper">
+            <h2>Output</h2>
+
+            <!-- 1. Pipe Section -->
+            <fieldset class="output-section">
+                <div class="legend-container">
+                    <span class="legend-title">1. Pipe</span>
+                    <div class="unit-selector">
+                        <select id="length-unit">
+                            <option value="mm">mm</option>
+                            <option value="inch">inch</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="output-item-inline">
+                    <span class="output-label">Pipe OD:</span>
+                    <span id="od-value" class="output-value">--</span>
+                </div>
+                <div class="output-item-inline">
+                    <span class="output-label">Wall Thickness:</span>
+                    <span id="wt-value" class="output-value">--</span>
+                </div>
+            </fieldset>
+
+            <!-- 2. Weight Section -->
+            <fieldset class="output-section">
+                <div class="legend-container">
+                    <span class="legend-title">2. Weight</span>
+                    <div class="unit-selector">
+                         <select id="weight-unit">
+                            <option value="kg/m">kg/m</option>
+                            <option value="N/m">N/m</option>
+                            <option value="lb/in">lb/in</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="output-item-inline">
+                    <span class="output-label">Pipe Weight:</span>
+                    <span id="pipe-weight-value" class="output-value">--</span>
+                </div>
+                <div class="output-item-inline">
+                    <span class="output-label">Content Weight:</span>
+                    <span id="content-weight-value" class="output-value">--</span>
+                </div>
+                <div class="output-item-inline">
+                    <span class="output-label">Insulation Weight:</span>
+                    <span id="insulation-weight-value" class="output-value">--</span>
+                </div>
+            </fieldset>
+            
+            <!-- 3. Material Properties Section -->
+            <fieldset class="output-section">
+                <div class="legend-container">
+                    <span class="legend-title">3. Material Properties</span>
+                    <div class="unit-selector">
+                         <select id="stress-unit">
+                            <option value="MPa">MPa</option>
+                            <option value="psi">psi</option>
+                            <option value="bar">bar</option>
+                            <option value="N/mm2">N/mm²</option>
+                        </select>
+                    </div>
+                </div>
+                 <div class="output-item-inline">
+                    <span class="output-label">Density:</span>
+                    <span id="density-value" class="output-value">--</span>
+                </div>
+                 <div class="output-item-inline">
+                    <span class="output-label">Allowable Stress (Sc):</span>
+                    <span id="sc-value" class="output-value">--</span>
+                </div>
+                 <div class="output-item-inline">
+                    <span class="output-label">Allowable Stress (Sh):</span>
+                    <span id="sh-value" class="output-value">--</span>
+                </div>
+                <div class="output-item-inline">
+                    <span class="output-label">Modulus of Elasticity (E):</span>
+                    <span id="ea-value" class="output-value">--</span>
+                </div>
+            </fieldset>
+        </div>
+         <center><h3>Fatkhurrochman <br>©2025</h3></center>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
